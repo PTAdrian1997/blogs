@@ -1,12 +1,11 @@
 import unittest
 from unittest.mock import patch
 import pytest
-from typing import Iterator
-from function_mocking_python.main import enough_files
+from function_mocking_python.main_2 import enough_files
 
 @pytest.fixture(scope="session", autouse=True)
-def get_number_of_files_fixture() -> Iterator[None]:
-  with patch("function_mocking_python.main.get_number_of_files", lambda s: 3):
+def get_number_of_files_fixture() -> None:
+  with patch("function_mocking_python.main_2.get_number_of_files", lambda s: 3):
     yield
 
 
